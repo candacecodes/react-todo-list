@@ -1,12 +1,20 @@
 import React from "react";
 import Todo from "./Todo";
 
-export default function TodoList({ todos }) {
+export default function TodoList({ todos, setTodos }) {
+	// events
+	const deleteHandler = () => {};
 	return (
 		<div className="todo-container">
 			<ul className="todo-list">
 				{todos.map((todo) => (
-					<Todo text={todo.text} />
+					<Todo
+						setTodos={setTodos}
+						todos={todos}
+						key={todo.id}
+						todo={todo}
+						text={todo.text}
+					/>
 				))}
 			</ul>
 		</div>
